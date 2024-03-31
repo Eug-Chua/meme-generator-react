@@ -1,0 +1,31 @@
+.meme-button {
+    position: relative;
+    background: linear-gradient(90deg, rgb(53, 49, 49) 1.18%, rgb(106, 101, 101) 100%);
+    color: white;
+    width: 477px;
+    height: 40px;
+    gap: 0px;
+    border-radius: 7px ;
+    opacity: 0px;
+}
+
+.meme-button h1 {
+    font-family: Karla;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.7px;
+    letter-spacing: -0.1em;
+    text-align: center;
+    padding: 10px;
+}
+
+.meme-button img {
+    position: absolute;
+    height: 50%;
+    top: 8px;
+    right: 130px;
+}
+
+.meme-image {
+    margin-top: 20px;
+}

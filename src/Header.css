@@ -1,0 +1,24 @@
+.header-container {
+    background: linear-gradient(90deg, rgb(53, 49, 49) 1.18%, rgb(106, 101, 101) 100%);
+    color: white;
+    display: flex;
+    height: 65px;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-logo {
+    height: 100%;
+    border-radius: 100%;
+}
+
+.header-title {
+    font-family: "Karla", sans-serif;
+    margin-left: 10px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 24.25px;
+    letter-spacing: -0.1em;
+    text-align: left;
+
+}
