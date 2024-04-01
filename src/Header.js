@@ -5,7 +5,7 @@ export default function Header(){
     return (
         <div className='header-container'>
             <img src="winnie-pooh.png" className='header-logo'/>
-            <h2 className='header-title'>Meme Generator</h2>
+            <h2 className='header-title'>Meme Lord</h2>
         </div>
     )
 }
