@@ -3,20 +3,25 @@ import './Meme.css'
 import memesData from './memesData'
 
 export default function Meme () {
-    // function generateImage () {
-    //     const memesArray = memesData.data.memes
-    //     let memeId = Math.floor(Math.random() * memesArray.length)
-    //     let memeUrl = memesArray[memeId].url
-    //     console.log(memeUrl)
-    // }
-    const [url, setUrl] = React.useState("");
+    
+    const [memeImage, setMemeImage] = React.useState("http://i.imgflip.com/1bij.jpg");
+    const [meme, setMeme] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: "http://i.imgflip.com/1bij.jpg",
+    })
+
+    const [allMemeImages, setAllMemes] = React.useState(memesData)
     
     function getMemeImage() {
 
-        const memesArray = memesData.data.memes
+        const memesArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-
-        setUrl(memesArray[randomNumber].url)
+        const url = memesArray[randomNumber].url
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage:url
+        }))
     }
 
     return (
@@ -38,16 +43,8 @@ export default function Meme () {
             </div>
             
             <div className='meme-image' >
-                <img src={url} className='meme' alt='meme'/>
-                {/* <img src="shut-up-and-take-my-money.png" className='meme'/> */}
+                <img src={meme.randomImage} className='meme' alt='meme'/>
             </div>
         </main>
     )
-}
-function addItem() {
-    // We'll work on this next
-    let newArrayLength = thingsArray.length + 1
-    let newThing = `Thing ${newArrayLength}`
-    // console.log(newThing)
-    setThingsArray(prevThingsArray => prevThingsArray.push(newThing))
 }
