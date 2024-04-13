@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './Meme.css'
 import memesData from './memesData'
 
@@ -24,26 +24,41 @@ export default function Meme () {
         }))
     }
 
+    function handleChange(event) {
+        const {name, value} = event.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]:value
+        }))
+    }
+
     return (
         <main className="meme-container">
             <div className='form'>
-                <div>
-                    <label>Top Text
-                        <input type='text' placeholder="Shut up" className='form-input'/>
-                    </label>
-                </div>
-                <div>
-                    <label>Bottom Text
-                        <input type='text' placeholder="and take my money" className='form-input'/>
-                    </label>
-                </div>
+                <input 
+                    type="text"
+                    placeholder="Top text"
+                    className="form-input"
+                    name="topText"
+                    value={meme.topText}
+                    onChange={handleChange}
+                />
+                <input 
+                    type="text"
+                    placeholder="Bottom text"
+                    className="form-input"
+                    name="bottomText"
+                    value={meme.bottomText}
+                    onChange={handleChange}
+                />
                 <button className='form-button' onClick={getMemeImage}>Get a new meme image
                     <img src='is-this-a-meme.png' className='button-image' alt='meme'/>
                 </button>
             </div>
-            
             <div className='meme-image' >
                 <img src={meme.randomImage} className='meme' alt='meme'/>
+                <h2 className="meme-text top">{meme.topText}</h2>
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
         </main>
     )

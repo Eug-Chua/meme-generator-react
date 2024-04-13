@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+main {
+    padding: 36px;
+}
+
 .form-button {
     position: relative;
     background: linear-gradient(90deg, rgb(53, 49, 49) 1.18%, rgb(106, 101, 101) 100%);
@@ -19,7 +23,6 @@
     grid-column: 1 / -1;
     cursor: pointer;
     margin-top: 5px;
-    /* border: 1px solid #D5D4D8; */
     box-shadow: 0px 2.98256px 7.4564px rgba(106, 101, 101, 0.3);
 }
 
@@ -30,6 +33,7 @@
 }
 
 .meme-image {
+    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -37,6 +41,7 @@
 
 .meme {
     width: 100%;
+    border-radius: 3px;
     max-width: 1000px;
     align-self: center;
     box-shadow: 0px 2.98256px 7.4564px rgba(106, 101, 101, 0.15);
@@ -49,14 +54,43 @@
     
 }
 
-main {
-    padding: 36px;
-}
-
 .form-input {
+    font-family: "Karla", sans-serif;
     border-radius: 5px;
     border: 1px solid #D5D4D8;
     text-indent: 5px;
-    height: 35px;
-    width: 200px;
+}
+
+
+.meme-text {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
 }
